@@ -4,7 +4,6 @@ A customizable gallery of hand-drawn arrow SVGs that can be easily copied as SVG
 
 ![image](https://github.com/Eronred/handy-arrows/assets/43992376/c72b32fb-fa62-47d2-8b6d-c1c08086d731)
 
-
 ## 🚀 Features
 
 - 📚 Gallery of unique, hand-drawn arrows by [DaryaKro](https://dribbble.com/DaryaKro)
@@ -40,13 +39,12 @@ A customizable gallery of hand-drawn arrow SVGs that can be easily copied as SVG
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the gallery.
 
-
 ## 🤝 Contributing
 
-I welcome contributions! Please follow these steps:
+I welcome contributions!
 
 ## 📞 Contact
 
-If you have any questions or suggestions, please open an issue or contact [X/Twitter](x.com/imeronn).
+If you have any questions or suggestions, please open an issue or contact [X/Twitter](http://x.com/imeronn).
 
 Happy coding! 🎉
