@@ -192,12 +192,25 @@ export const fetchSvgContent = async (path: string): Promise<string> => {
     return response.text();
 };
 
-export const createReactComponentString = (svgContent: string): string => {
+export const createReactComponentString = (
+    svgContent: string,
+    id: string
+): string => {
+    const componentName = id.replace("a", "A").replace("-", "");
     const code = `import React from 'react';
-      const Arrow = () => (
-        ${svgContent}
-);
+  
+export type ${componentName}Element = SVGSVGElement;
+export type ${componentName}Props = React.SVGAttributes<SVGSVGElement>;
 
-export default Arrow;`;
+const ${componentName} = React.forwardRef<${componentName}Element, ${componentName}Props>(
+  (props, forwardedRef) => (
+${svgContent.replace(
+  `xmlns="http://www.w3.org/2000/svg"`,
+  `xmlns="http://www.w3.org/2000/svg" ref={forwardedRef} {...props}`
+)} 
+));
+${componentName}.displayName = "${componentName}";
+
+export default ${componentName};`;
     return code;
 };

@@ -8,11 +8,11 @@ import { useToast } from "@/components/ui/use-toast";
 const Home: React.FC = () => {
   const { toast } = useToast();
 
-  const copyToClipboard = async (path: string, type: "svg" | "react") => {
+  const copyToClipboard = async (path: string, type: "svg" | "react", id: string) => {
     try {
       const svgContent = await fetchSvgContent(path);
       const textToCopy = type === "react"
-        ? createReactComponentString(svgContent)
+        ? createReactComponentString(svgContent, id)
         : svgContent;
 
       await navigator.clipboard.writeText(textToCopy);
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
             <ArrowCard
               key={arrow.id}
               arrow={arrow}
-              onCopy={(type) => copyToClipboard(arrow.svg, type)}
+              onCopy={(type) => copyToClipboard(arrow.svg, type, arrow.id)}
               onDownload={() => downloadSvg(arrow.svg)}
             />
           ))}
