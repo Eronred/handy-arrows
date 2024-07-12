@@ -7,8 +7,8 @@ import Logo from './logo'
 export default function Header() {
     return (
         <>
-            <header className="border-b sticky top-0 bg-white/40 shadow-sm backdrop-blur-md">
-                <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <header className="w-full border-b sticky top-0 bg-white/40 shadow-sm backdrop-blur-md z-50">
+                <div className=" mx-auto px-4 py-4 flex justify-between items-center">
                     <Logo />
                     <div className="flex items-center space-x-4">
                         <Link

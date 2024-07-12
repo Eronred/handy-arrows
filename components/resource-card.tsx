@@ -6,24 +6,29 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-interface ArrowDesign {
+interface IResource {
     id: string;
     svg: string;
 }
 
-interface ArrowCardProps {
-    arrow: ArrowDesign;
+interface ResourceCardProps {
+    resource: IResource;
     onCopy: (type: 'svg' | 'react') => void;
     onDownload: () => void;
 }
 
-const ArrowCard: React.FC<ArrowCardProps> = ({ arrow, onCopy, onDownload }) => {
+const ResourceCard: React.FC<ResourceCardProps> = ({
+    resource,
+    onCopy,
+    onDownload
+}) => {
     return (
-        <div key={arrow.id} className="border border-gray-100 p-4 rounded-md shadow-sm">
-            <div className="w-full aspect-square flex items-center justify-center p-4">
+        <div key={resource.id}
+            className="border border-gray-100 p-8 rounded-md shadow-sm">
+            <div className="w-full aspect-square flex items-center justify-center ">
                 <img
-                    src={arrow.svg}
-                    alt={arrow.id}
+                    src={resource.svg}
+                    alt={resource.id}
                     className='w-full h-full object-contain'
                 />
             </div>
@@ -58,4 +63,4 @@ const ArrowCard: React.FC<ArrowCardProps> = ({ arrow, onCopy, onDownload }) => {
     );
 };
 
-export default ArrowCard;
+export default ResourceCard;
