@@ -1,7 +1,7 @@
 import { ResourceCollection } from "@/lib/types";
 
 
-const arrows = [
+const arrows: ResourceCollection[] = [
     {
         id: "arrow-1",
         svg: "../static/arrows/arrow-1.svg",
@@ -233,7 +233,7 @@ const arrows = [
         category: "Arrows"
     }))
 ]
-const infographic = [
+const infographic: ResourceCollection[] = [
     {
         id: "infographic-1",
         svg: "../static/infographic/chat.svg",
@@ -286,7 +286,7 @@ const infographic = [
     },
 ]
 
-const doodles = [
+const doodles: ResourceCollection[] = [
     ...Array.from({ length: 350 }, (_, i) => ({
         id: `doodle-${i + 1}`,
         svg: `../static/doodles/doodle_${i + 1}.svg`,
@@ -294,7 +294,7 @@ const doodles = [
     }))
 ]
 
-export const designCollections: ResourceCollection = [
+export const designCollections: ResourceCollection[] = [
     ...arrows,
     ...infographic,
     ...doodles
