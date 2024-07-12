@@ -1,8 +1,9 @@
 # Hand-Drawn Arrows
 
-A customizable gallery of hand-drawn arrow SVGs that can be easily copied as SVG code or React components for use in your projects.
+A gallery of hand-drawn arrows and other design resources as SVGs that can be easily copied as SVG code or React components for use in your projects.
 
-![image](https://github.com/Eronred/handy-arrows/assets/43992376/c72b32fb-fa62-47d2-8b6d-c1c08086d731)
+![image](https://github.com/user-attachments/assets/e55eaf98-0911-4111-96db-76718f6d9970)
+
 
 ## 🚀 Features
 
