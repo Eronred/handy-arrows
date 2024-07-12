@@ -6,15 +6,16 @@ import ResourceCard from "@/components/resource-card";
 import { designCollections, createReactComponentString, fetchSvgContent } from "@/utils";
 import { useToast } from "@/components/ui/use-toast";
 import { Category, ResourceCollection } from '@/lib/types';
-import { useMediaQuery } from "@uidotdev/usehooks";
 import MobileToolbar from "@/components/mobile-toolbar";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const categories: readonly Category[] = ["Arrows", "Doodles", "Infographic"] as const;
 
 const Home: React.FC = () => {
   const { toast } = useToast();
   const [selectedCategory, setSelectedCategory] = useState<Category>("Arrows");
-  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+  const isSmallDevice = useMediaQuery("only screen and (max-width: 768px)");
+
   const copyToClipboard = async (path: string, type: "svg" | "react") => {
     try {
       const svgContent = await fetchSvgContent(path);
