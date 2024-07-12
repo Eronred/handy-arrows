@@ -12,19 +12,23 @@ interface IResource {
 }
 
 interface ResourceCardProps {
-    arrow: IResource;
+    resource: IResource;
     onCopy: (type: 'svg' | 'react') => void;
     onDownload: () => void;
 }
 
-const ResourceCard: React.FC<ResourceCardProps> = ({ arrow, onCopy, onDownload }) => {
+const ResourceCard: React.FC<ResourceCardProps> = ({
+    resource,
+    onCopy,
+    onDownload
+}) => {
     return (
-        <div key={arrow.id}
+        <div key={resource.id}
             className="border border-gray-100 p-8 rounded-md shadow-sm">
             <div className="w-full aspect-square flex items-center justify-center ">
                 <img
-                    src={arrow.svg}
-                    alt={arrow.id}
+                    src={resource.svg}
+                    alt={resource.id}
                     className='w-full h-full object-contain'
                 />
             </div>

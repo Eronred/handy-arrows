@@ -1,6 +1,6 @@
-export type Category = "AI" | "Arrows" | "Doodles" | "Infographic";
+export type Category = "Arrows" | "Doodles" | "Infographic";
 
-export interface ArrowDesign {
+export interface ResourceCollection {
     id: string;
     svg: string;
     category: Category;

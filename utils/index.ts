@@ -1,4 +1,4 @@
-import { ArrowDesign } from "@/lib/types";
+import { ResourceCollection } from "@/lib/types";
 
 
 const arrows = [
@@ -294,11 +294,10 @@ const doodles = [
     }))
 ]
 
-export const designCollections = [
+export const designCollections: ResourceCollection = [
     ...arrows,
     ...infographic,
     ...doodles
-
 ];
 
 export const fetchSvgContent = async (path: string): Promise<string> => {
