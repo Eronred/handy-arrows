@@ -1,4 +1,4 @@
-import { ResourceCollection } from "@/lib/types";
+import { Category, ResourceCollection } from "@/lib/types";
 
 
 const arrows: ResourceCollection[] = [
@@ -230,7 +230,7 @@ const arrows: ResourceCollection[] = [
     ...Array.from({ length: 140 }, (_, i) => ({
         id: `arrow-${46 + i}`,
         svg: `../static/arrows/${i + 1}.svg`,
-        category: "Arrows"
+        category: "Arrows" as Category
     }))
 ]
 const infographic: ResourceCollection[] = [
@@ -290,7 +290,7 @@ const doodles: ResourceCollection[] = [
     ...Array.from({ length: 350 }, (_, i) => ({
         id: `doodle-${i + 1}`,
         svg: `../static/doodles/doodle_${i + 1}.svg`,
-        category: "Doodles"
+        category: "Doodles" as Category
     }))
 ]
 
