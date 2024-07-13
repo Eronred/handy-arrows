@@ -24,12 +24,6 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
     onDownload
 }) => {
 
-    const imageStyles = {
-        width: '100%',
-        height: '100%',
-        objectFit: 'contain',
-    };
-
     return (
         <div key={resource.id}
             className="border border-gray-100 p-8 rounded-md shadow-sm">
@@ -37,7 +31,13 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
                 <Image
                     src={resource.svg}
                     alt={resource.id}
-                    style={imageStyles}
+                    style={
+                        {
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                        }
+                    }
                     loading='lazy'
                     width={200}
                     height={200}
