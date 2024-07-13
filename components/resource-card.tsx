@@ -5,6 +5,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Image from 'next/image';
 
 interface IResource {
     id: string;
@@ -22,14 +23,24 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
     onCopy,
     onDownload
 }) => {
+
+    const imageStyles = {
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+    };
+
     return (
         <div key={resource.id}
             className="border border-gray-100 p-8 rounded-md shadow-sm">
             <div className="w-full aspect-square flex items-center justify-center ">
-                <img
+                <Image
                     src={resource.svg}
                     alt={resource.id}
-                    className='w-full h-full object-contain'
+                    style={imageStyles}
+                    loading='lazy'
+                    width={200}
+                    height={200}
                 />
             </div>
             <div className="mt-4 flex justify-center gap-2">

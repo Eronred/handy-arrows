@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import Script from 'next/script';
+import { CSPostHogProvider } from "@/providers/CSPostHogProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hand Drawn Arrows",
-  description: "Easy to use Hand Drawn Arrows",
+  title: "Handy Arrows",
+  description: "A collection of hand-drawn arrows, doodles, and infographic elements for your next project.",
 };
 
 export default function RootLayout({
@@ -16,21 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <Toaster />
-        {umamiWebsiteId && (
-          <Script
-            src="https://cloud.umami.is/script.js"
-            data-website-id={umamiWebsiteId}
-            strategy="lazyOnload"
-          />
-        )}
-      </body>
+      <CSPostHogProvider>
+        <body className={inter.className}>
+          {children}
+          <Toaster />
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
