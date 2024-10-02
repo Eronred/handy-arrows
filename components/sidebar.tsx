@@ -28,18 +28,18 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, selectedCategory, onCateg
             <div className="mt-2 bg-white rounded shadow-lg p-2">
                 <div
                     className="text-left mt-1">
-                    <p>Your Product</p>
+                    <p>Nice Prompt</p>
                     <p className="text-sm text-gray-600">
-                        Lets share your lovely product with 1000+ visitors
+                        Save, organize and share your prompts
                     </p>
                 </div>
                 <Link
-                    href="mailto:erencanarica0@gmail.com"
+                    href="https://niceprompt.app/"
                     target="_blank"
                 >
                     <button
                         className="mt-4 w-full bg-blue-500 text-sm text-white rounded p-1">
-                        Contact
+                        Get Nice Prompt
                     </button>
                 </Link>
             </div>
