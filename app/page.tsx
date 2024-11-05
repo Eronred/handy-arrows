@@ -9,7 +9,7 @@ import { Category, ResourceCollection } from '@/lib/types';
 import MobileToolbar from "@/components/mobile-toolbar";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-const categories: readonly Category[] = ["Arrows", "Doodles", "Infographic"] as const;
+const categories: readonly Category[] = ["Arrows", "Doodles", "Infographic", "Illustrations"] as const;
 
 const Home: React.FC = () => {
   const { toast } = useToast();

@@ -1,4 +1,4 @@
-export type Category = "Arrows" | "Doodles" | "Infographic";
+export type Category = "Arrows" | "Doodles" | "Infographic" | "Illustrations";
 
 export interface ResourceCollection {
     id: string;

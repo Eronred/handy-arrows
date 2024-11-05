@@ -289,15 +289,24 @@ const infographic: ResourceCollection[] = [
 const doodles: ResourceCollection[] = [
     ...Array.from({ length: 350 }, (_, i) => ({
         id: `doodle-${i + 1}`,
-        svg: `../static/doodles/doodle_${i + 1}.svg`,
+        svg: `/static/doodles/doodle_${i + 1}.svg`,
         category: "Doodles" as Category
+    }))
+]
+
+const illustrations: ResourceCollection[] = [
+    ...Array.from({ length: 54 }, (_, i) => ({
+        id: `illustration_${i + 1}`,
+        svg: `/static/illustrations/illustration_${i + 1}.svg`,
+        category: "Illustrations" as Category
     }))
 ]
 
 export const designCollections: ResourceCollection[] = [
     ...arrows,
     ...infographic,
-    ...doodles
+    ...doodles,
+    ...illustrations
 ];
 
 export const fetchSvgContent = async (path: string): Promise<string> => {
