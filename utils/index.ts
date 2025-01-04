@@ -335,3 +335,25 @@ ${componentName}.displayName = "${componentName}";
 export default ${componentName};`;
     return code;
 };
+
+export const createVueComponentString = (
+    svgContent: string,
+    id: string
+): string => {
+    const componentName = id.replace("a", "A").replace("-", "");
+    return `<template>
+${svgContent.replace(
+        `xmlns="http://www.w3.org/2000/svg"`,
+        `xmlns="http://www.w3.org/2000/svg" v-bind="$attrs"`
+    )}
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    name: '${componentName}',
+    inheritAttrs: false
+})
+</script>`;
+};

@@ -6,6 +6,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from 'next/image';
+import { Component } from 'lucide-react';
 
 interface IResource {
     id: string;
@@ -14,7 +15,7 @@ interface IResource {
 
 interface ResourceCardProps {
     resource: IResource;
-    onCopy: (type: 'svg' | 'react') => void;
+    onCopy: (type: 'svg' | 'react' | 'vue') => void;
     onDownload: () => void;
 }
 
@@ -53,11 +54,28 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
                         </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuItem onClick={() => onCopy('react')}>
-                            React Comp.
+                        <DropdownMenuItem
+                            className="flex items-center gap-1"
+                            onClick={() => onCopy('react')}
+                        >
+                            <img src="/react.svg" className="size-4" />
+                            <span>React</span>
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => onCopy('svg')}>
-                            SVG
+                        <DropdownMenuItem
+                            className="flex items-center gap-1"
+                            onClick={() => onCopy('vue')}
+                        >
+                            <img src="/vue.svg" className="size-4" />
+                            <span>Vue</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                            className="flex items-center gap-1"
+                            onClick={() => onCopy('svg')}
+                        >
+                            <Component
+                                className='size-4'
+                            />
+                            <span>SVG</span>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
@@ -75,3 +93,6 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
 };
 
 export default ResourceCard;
+
+
+
