@@ -319,13 +319,18 @@ export const createReactComponentString = (
     id: string
 ): string => {
     const componentName = id.replace("a", "A").replace("-", "");
+
+    const processedSvgContent = svgContent
+        .replace(/fill-rule/g, "fillRule")
+        .replace(/clip-rule/g, "clipRule");
+
     const code = `import React from 'react';
 export type ${componentName}Element = SVGSVGElement;
 export type ${componentName}Props = React.SVGAttributes<SVGSVGElement>;
 
 const ${componentName} = React.forwardRef<${componentName}Element, ${componentName}Props>(
   (props, forwardedRef) => (
-${svgContent.replace(
+${processedSvgContent.replace(
         `xmlns="http://www.w3.org/2000/svg"`,
         `xmlns="http://www.w3.org/2000/svg" ref={forwardedRef} {...props}`
     )} 
@@ -333,8 +338,10 @@ ${svgContent.replace(
 ${componentName}.displayName = "${componentName}";
 
 export default ${componentName};`;
+
     return code;
 };
+
 
 export const createVueComponentString = (
     svgContent: string,
