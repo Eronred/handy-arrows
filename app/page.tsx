@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import Header from "@/components/header";
-import Sidebar from "@/components/sidebar";
 import ResourceCard from "@/components/resource-card";
 import {
   designCollections,
@@ -13,9 +11,12 @@ import { useToast } from "@/components/ui/use-toast";
 import { Category, ResourceCollection } from '@/lib/types';
 import MobileToolbar from "@/components/mobile-toolbar";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import AppSidebar from "@/components/sidebar";
-const categories: readonly Category[] = ["Arrows", "Doodles", "Infographic", "Illustrations"] as const;
+
+const categories: readonly Category[] = ["Arrows", "Doodles", "Infographic", "Illustrations",
+  "Underlines"
+] as const;
 
 const Home: React.FC = () => {
   const { toast } = useToast();

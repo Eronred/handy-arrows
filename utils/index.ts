@@ -302,8 +302,17 @@ const illustrations: ResourceCollection[] = [
     }))
 ]
 
+const underlines: ResourceCollection[] = [
+    ...Array.from({ length: 31 }, (_, i) => ({
+        id: `underline_${i + 1}`,
+        svg: `/static/underlines/underline_${i + 1}.svg`,
+        category: "Underlines" as Category
+    }))
+]
+
 export const designCollections: ResourceCollection[] = [
     ...arrows,
+    ...underlines,
     ...infographic,
     ...doodles,
     ...illustrations
