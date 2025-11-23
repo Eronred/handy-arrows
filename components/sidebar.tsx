@@ -62,14 +62,14 @@ const AppSidebar: React.FC<SidebarProps> = ({ categories, selectedCategory, onCa
                         <div
                             className="flex items-center gap-2"
                         >
-                            <p>Landing Components</p>
+                            <p>React Native Components</p>
                         </div>
                         <p className="text-sm text-gray-600">
-                            Well designed landings are made easy
+                            UI library for RN
                         </p>
                     </div>
                     <Link
-                        href="https://landingcomponents.com/"
+                        href="https://reactnativecomponents.com/"
                         target="_blank"
                     >
                         <button
